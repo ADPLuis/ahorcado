@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab fx:id="partidaTab" closable="false" text="Partida">
+         <content>
+            <BorderPane fx:id="partidaView" prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <HBox fx:id="puntuacionHBox" alignment="TOP_RIGHT" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox fx:id="puntuacionVBox">
+                           <children>
+                              <Label fx:id="puntosLabel" text="PUNTOS" />
+                              <Label fx:id="puntuacionLabel" layoutX="10.0" layoutY="10.0" text="0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </top>
+               <center>
+                  <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fx:id="imagen" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="adivinarLabel" />
+                        <Label fx:id="fallosLabel" text="Fallos: " />
+                     </children>
+                  </VBox>
+               </center>
+               <bottom>
+                  <HBox fx:id="partidabotonera" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="intentoText" />
+                        <Button fx:id="letraButton" mnemonicParsing="false" text="Letra" />
+                        <Button fx:id="resolverButton" mnemonicParsing="false" text="Resolver" />
+                     </children>
+                  </HBox>
+               </bottom>
+            </BorderPane>
+         </content>
+    </Tab>
+      <Tab fx:id="palabrasTab" closable="false" text="Palabras">
+         <content>
+            <BorderPane fx:id="palabrasView">
+               <center>
+                  <ListView fx:id="palabraslista" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <right>
+                  <VBox fx:id="palabrasbotonera" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="TOP_CENTER">
+                     <children>
+                        <Button fx:id="anadirButton" mnemonicParsing="false" text="Añadir" />
+                        <Button fx:id="quitarButton" mnemonicParsing="false" text="Quitar" />
+                     </children>
+                  </VBox>
+               </right>
+            </BorderPane>
+         </content>
+      </Tab>
+      <Tab fx:id="puntuacionesTab" closable="false" text="Puntuaciones">
+         <content>
+            <ListView fx:id="puntuacionesView" prefHeight="200.0" prefWidth="200.0" />
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
